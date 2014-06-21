@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
     object.strftime("%B %d, %Y")
   end
 
-  def forecast()
-    barometer = Barometer.new('11222')
+  def forecast(location)
+    barometer = Barometer.new(location)
     weather = barometer.measure
     return weather.current.temperature.f
   end
