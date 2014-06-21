@@ -11,11 +11,11 @@ body {
   color: #444;
   font-family: 'Helvetica';
   background-color: #f5f5f5;
-  min-height: 100%;  
+  min-height: 100%;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Hammersmith One';  
+  font-family: 'Hammersmith One';
 }
 
 @media screen {
@@ -23,6 +23,7 @@ h1, h2, h3, h4 {
 
 
 /* NAV DROP DOWN */
+
 
 #arrow {
   cursor: pointer;
@@ -46,7 +47,7 @@ h1, h2, h3, h4 {
   .profile {
     width: 23%;
     span, img {
-      display: inline-block; 
+      display: inline-block;
       vertical-align: middle;
     }
     img {
@@ -59,6 +60,7 @@ h1, h2, h3, h4 {
     float: right;
     text-align: right;
   }
+
 }
 
 .nav {
