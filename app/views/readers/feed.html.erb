@@ -1,24 +1,24 @@
 <script>
-  $(window).load(function() {
+  $(document).ready(function() {
+    $('.notice').css({'position': 'absolute', 'top': '75px'})
+                .hide();
     rssFeed();
     twitterFeed();
-    noArticle();       
   })
 </script>
 
-<div class="frontpage">
+<div class="notice"></div>
 
-  <div class="rss feed" >
+<div class="rss feed" >
   <h2>RSS feed</h2>
 
-    <% @feeds.each do |feed| %>
-      <div data-feed="<%= feed %>"></div>
-    <% end %>
-  </div>
+  <% @feeds.each do |feed| %>
+    <div data-feed="<%= feed %>"></div>
+  <% end %>
+</div>
 
 
-  <div class="twitter feed">
-    <h2>Social feed</h2>
-    <img src="assets/loader2.gif" alt="" id='loader' />
-  </div>
+<div class="twitter feed">
+  <h2>Social feed</h2>
+  <img src="assets/loader2.gif" alt="" id='loader' />
 </div>

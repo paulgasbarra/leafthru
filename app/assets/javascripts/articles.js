@@ -1,11 +1,11 @@
-//= require feed
-
 function articleAction(buttonSelector, e) {
   if (buttonSelector === '.save-article') {
     saveArticle(e);
   }
   var article = $(e.target).parent().parent();
-  article.toggle('drop', 500, function(){ article.remove(); });
+  article.toggle('drop', 500, function(){
+    article.remove();
+  });
 }
 
 function saveArticle(e) {
@@ -28,29 +28,38 @@ function saveArticle(e) {
     dataType: 'json',
     data: { article: {title: title, url: url, extract: extract, publication: publication, shared_by: shared_by} },
     success: function(data) {
-      console.log('saving');
+      alreadySaved(data);
     }
   })
 }
 
-function noArticle() {
-  if ($('.rss').children().length === 0) {
-    $('.twitter').append('No more article in this feed.').append("<a href='/articles'>Read saved articles</a>");
+function alreadySaved(data) {
+  if (data['msg'] === "Already saved!") {
+    $('.notice').show().html(data['msg'])
+    setTimeout(function() {
+      $('.notice').fadeOut();
+    }, 1200);
   }
-  if ($('.twitter').children().length === 0) {
-    $('.twitter').append('No more article in this feed.').append("<a href='/articles'>Read saved articles</a>");
+}
+
+
+function noArticle(e) {
+  var feed = $(e.target).parent().parent().parent();
+  if ($(feed).find('div').length === 0) {
+    $(feed).append('No more article in this feed.')
+           .append("<a href='/articles'>Read saved articles</a>");
   }
 }
 
 function deleteArticle(e) {
   var button = $(e.target);
-  button.parent().toggle('clip');
+  button.parent().toggle('clip', 500, function() {
+    button.parent().remove();
+  });
   $.ajax({
     url: button.attr('data'),
     method: 'delete',
-    success: function() {
-      button.parent().remove();
-    }
+    success: function() { }
   });
 }
 
