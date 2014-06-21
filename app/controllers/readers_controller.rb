@@ -2,10 +2,6 @@ class ReadersController < ApplicationController
   before_action :require_login, only: :profile
 
   def index
-    readers = Reader.all
-    @supscriptions = readers.map do |reader|
-
-    end
   end
 
   def create
@@ -17,7 +13,7 @@ class ReadersController < ApplicationController
     if @reader.save!  && passwordValidate(params[:reader][:password]) && emailValidate(params[:reader][:email])
         current_reader = login(params[:reader][:email], params[:reader][:password])
         redirect_to '/profile'
-        flash[:notice] = 'Successfully signed up. Please log in for access.'
+        flash[:notice] = 'Successfully signed up.'
     else
       redirect_to '/profile'
       flash[:alert] = 'Sign up failed. Try again.'
@@ -64,10 +60,6 @@ class ReadersController < ApplicationController
       format.html
       format.json { render :json => @articles.to_json }
     end
-  end
-
-  def facebook
-    @reader = current_reader
   end
 
   def feed

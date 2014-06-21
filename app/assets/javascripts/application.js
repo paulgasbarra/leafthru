@@ -5,10 +5,11 @@
 //= require_tree .
 
 $(window).load(function() {
- 
-})  
+  $('.nav').css({ 'position': 'absolute', 'z-index': '1', 'right': '10px', 'top': '60px', 'display': 'none' });
+})
 
 $(document).ready(function() {
+  // Drop down menu
   $('.nav').hide();
 
   $('#arrow').click(function() {
@@ -18,5 +19,10 @@ $(document).ready(function() {
   $('.nav').children().click(function() {
     $('.nav').hide();
   })
+
+  // Delete article
+  $('.delete').click(function(e) {
+    deleteArticle(e);
+  });
 })
 

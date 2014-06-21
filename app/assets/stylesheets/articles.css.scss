@@ -1,0 +1,49 @@
+/* SAVED ARTICLES */
+
+.saved-article {
+  h3 {
+  font-size: 18px;
+  }
+  a {
+    text-decoration: none;
+    color: #D1802E;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #5687a8;
+  }
+  span {
+    font-family: 'Oswald';
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 10px;
+  }
+  p {
+    margin-bottom: .6em;
+  }
+}
+
+/* .delete has same style as .save-article, .discard-article */
+
+
+/* BOOKMARKS */
+.leafer {
+  margin-top: 1.5em;
+  border: 1px solid #ccc;
+  padding: 8px;
+  background-color: rgba(255,255,255, 0.7);
+  img {
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 0 15px 10px 0;
+  }
+  h4 {
+    margin: 0.5em 0;
+    font-size: 1.3em;
+    color: #D1802E;
+  }
+  p {
+    margin: 7px 0 0 0;
+  }
+}

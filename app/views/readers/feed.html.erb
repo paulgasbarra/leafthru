@@ -1,17 +1,9 @@
 <script>
-
-
   $(window).load(function() {
     rssFeed();
     twitterFeed();
+    noArticle();       
   })
-
-  $(document).on('page:load', function() {
-    rssFeed();
-    twitterFeed();
-    noArticle();
-  })
-
 </script>
 
 <div class="frontpage">
@@ -27,6 +19,6 @@
 
   <div class="twitter feed">
     <h2>Social feed</h2>
-    <img src="loader.gif" alt="" id='loader' />
+    <img src="assets/loader2.gif" alt="" id='loader' />
   </div>
 </div>

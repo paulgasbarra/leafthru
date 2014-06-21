@@ -1,7 +1,8 @@
 <div class="menu">
-  <div class='logo'>
-    <a href="/">Leafthru LOGO
-    </a>
+  <div class="logo">
+  <a href="/">
+    <img src="assets/logo.png" alt="">
+  </a>
   </div>
 
   <div class='location'>
@@ -23,6 +24,19 @@
     <% else %>
       <span>Hi, Reader</span>
     <% end %>
+
+    <br/>
+
+    <% if current_reader %>
+    <span>
+    <a href="/feed">
+      <i class="fa fa-list-ul"></i> News Feed
+    </a> &nbsp;
+    <a href="/articles">
+      <i class="fa fa-bookmark"></i> Bookmarks
+    </a>
+    </span>
+    <% end %>
   </div>
 
   <div id='arrow'>
@@ -41,12 +55,15 @@
         <a href="/readers">What friends are reading</a>
     </li>
     <li>
-      <a href="/profile">Edit Profile</a>
+      <a href="/profile">Edit Profile/Subscriptions</a>
     </li>
     <li>
       <a href="/logout">Log out</a>
     </li>
    <% end %>
+    <li>
+      <a href="/about">About Leafthru</a>
+    </li>
   </ul>
 
 </div>
